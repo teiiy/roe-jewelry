@@ -1,0 +1,15 @@
+:root {
+  --color-alabaster: #F7F4EE;
+  --color-cream: #F1ECE2;
+  --color-emerald: #004B36;
+  --color-gold: #C5A25D;
+  --color-gold-hover: #DDBA76;
+  --color-slate: #2A2A2A;
+
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}

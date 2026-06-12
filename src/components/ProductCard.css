@@ -1,0 +1,70 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.product-image-container {
+  background-color: var(--color-cream);
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-slow);
+}
+
+.product-image {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  transition: transform var(--transition-smooth);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-card:hover .product-image-container {
+  background-color: #EAE4D6;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: center;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  color: var(--color-slate);
+}
+
+.product-price {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-slate);
+  opacity: 0.8;
+}
+
+.add-to-bag-btn {
+  background-color: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2rem;
+  transition: all var(--transition-fast);
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
+.add-to-bag-btn:hover {
+  background-color: var(--color-gold);
+  color: #fff;
+}

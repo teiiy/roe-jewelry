@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "title": "Rainbow Bangle",
+    "price": 7.00,
+    "description": "Polished gold-toned bangle studded with vibrant, multi-colored gemstone sets.",
+    "image": "/src/assets/images/product_bangle.png"
+  },
+  {
+    "id": "2",
+    "title": "Chic Pendant",
+    "price": 7.00,
+    "description": "Premium golden chain link necklace adorned with an elegant minimalist rectangular diamond-cut accent.",
+    "image": "/src/assets/images/product_necklace.png"
+  },
+  {
+    "id": "3",
+    "title": "Minimalist Studs",
+    "price": 7.00,
+    "description": "Emerald-cut green gemstones set in classic, polished tarnish-free gold studs.",
+    "image": "/src/assets/images/product_studs.png"
+  },
+  {
+    "id": "4",
+    "title": "New Riring",
+    "price": 10.00,
+    "description": "Solitaire brilliant-cut diamond mounted elegantly on a minimalist 18K gold band.",
+    "image": "/src/assets/images/product_ring.png"
+  }
+]
