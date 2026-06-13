@@ -1,12 +1,19 @@
-.brand-story {
+.brand-story.container {
   padding-top: 6rem;
-  padding-bottom: 2.5rem; /* Reduced padding-bottom to align card base with the floating inset picture */
-  margin-top: 8rem;
-  margin-bottom: 11rem; /* Increased margin-bottom by another 2rem (total 11rem) to separate from reviews */
-  background-color: #ffffff; /* White card surface for clear threshold contrast */
-  border: 1px solid rgba(197, 162, 93, 0.18); /* Elegant gold-toned border */
+  padding-bottom: 2.5rem;
+  /* Reduced padding-bottom to align card base with the floating inset picture */
+  margin-top: 8rem !important;
+  margin-bottom: 11rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  /* Increased margin-bottom by another 2rem (total 11rem) to separate from reviews */
+  background-color: #ffffff;
+  /* White card surface for clear threshold contrast */
+  border: 1px solid rgba(197, 162, 93, 0.18);
+  /* Elegant gold-toned border */
   border-radius: 8px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.02), 0 15px 30px rgba(197, 162, 93, 0.01); /* Soft luxury elevation shadow */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08), 0 15px 30px rgba(197, 162, 93, 0.01);
+  /* Soft luxury elevation shadow */
   position: relative;
 }
 
@@ -54,7 +61,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 45%;
+  width: 60%;
   aspect-ratio: 3/4;
   overflow: hidden;
   border: 1px solid rgba(197, 162, 93, 0.25);
@@ -181,20 +188,23 @@
 
 /* Responsiveness */
 @media (max-width: 1024px) {
-  .brand-story {
+  .brand-story.container {
     padding-top: 4rem;
     padding-bottom: 2rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
   }
+
   .brand-story-grid {
     grid-template-columns: 1fr;
     gap: 4.5rem;
   }
+
   .story-visuals {
     max-width: 500px;
     margin: 0 auto;
   }
+
   .story-content {
     max-width: 600px;
     margin: 0 auto;
@@ -202,29 +212,33 @@
 }
 
 @media (max-width: 600px) {
-  .brand-story {
+  .brand-story.container {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
     border-radius: 4px;
   }
+
   .story-visuals {
     aspect-ratio: auto;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
+
   .main-image-frame {
     width: 100%;
     height: auto;
     aspect-ratio: 4/5;
   }
+
   .floating-inset-frame {
     position: static;
     width: 100%;
     aspect-ratio: 4/3;
   }
+
   .story-heading {
     font-size: 2.2rem;
   }

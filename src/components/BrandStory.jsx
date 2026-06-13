@@ -4,7 +4,7 @@ import './BrandStory.css';
 
 const BrandStory = () => {
   const containerRef = useRef(null);
-  
+
   // Subtle parallax scroll effect
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -16,25 +16,25 @@ const BrandStory = () => {
   return (
     <section ref={containerRef} className="brand-story container" id="about">
       <div className="brand-story-grid">
-        
+
         {/* Column 1: Visual Composition */}
         <div className="story-visuals">
           <div className="main-image-frame">
-            <img 
-              src="/src/assets/images/brand_story.png" 
-              alt="Luxury finished jewelry close-up" 
+            <img
+              src="/src/assets/images/brand_story.png"
+              alt="Luxury finished jewelry close-up"
               className="main-story-image"
             />
           </div>
-          
+
           {/* Overlapping Parallax Inset */}
-          <motion.div 
-            style={{ y: yOffset }} 
+          <motion.div
+            style={{ y: yOffset }}
             className="floating-inset-frame"
           >
-            <img 
-              src="/src/assets/images/bs_mosaic_1.png" 
-              alt="Craftsmanship concept sketch" 
+            <img
+              src="/src/assets/images/bs_mosaic_1.png"
+              alt="Craftsmanship concept sketch"
               className="inset-story-image"
             />
             <div className="inset-caption">01 / CONCEPT SKETCH</div>
@@ -44,8 +44,8 @@ const BrandStory = () => {
         {/* Column 2: Structured Editorial Content */}
         <div className="story-content">
           <span className="story-eyebrow">OUR PHILOSOPHY</span>
-          <h2 className="story-heading">Timeless Form &<br/>Structural Balance</h2>
-          
+          <h2 className="story-heading">Timeless Form &<br />Structural Balance</h2>
+
           <div className="story-paragraphs">
             <p>
               ROE Accessories is born from a desire to blend flawless classicism and high-end craftsmanship with specialty fine jewelry. We reject mass production to focus entirely on rarity, structural balance, and the captivating play of light against precious metals.
