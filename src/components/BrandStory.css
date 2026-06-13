@@ -1,7 +1,13 @@
 .brand-story {
-  padding-top: 12rem;
-  padding-bottom: 16rem; /* Expanded bottom padding to safeguard against visual overlapping */
-  background-color: transparent;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  background-color: #ffffff; /* White card surface for clear threshold contrast */
+  border: 1px solid rgba(197, 162, 93, 0.18); /* Elegant gold-toned border */
+  border-radius: 8px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.02), 0 15px 30px rgba(197, 162, 93, 0.01); /* Soft luxury elevation shadow */
+  position: relative;
 }
 
 .brand-story-grid {
@@ -176,8 +182,10 @@
 /* Responsiveness */
 @media (max-width: 1024px) {
   .brand-story {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
   }
   .brand-story-grid {
     grid-template-columns: 1fr;
@@ -195,8 +203,11 @@
 
 @media (max-width: 600px) {
   .brand-story {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: 4px;
   }
   .story-visuals {
     aspect-ratio: auto;
