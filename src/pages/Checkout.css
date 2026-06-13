@@ -1,5 +1,5 @@
 .checkout-page {
-  padding-top: 8rem;
+  padding-top: 10rem;
   padding-bottom: 8rem;
 }
 
@@ -288,7 +288,7 @@
 
 /* Success Page View */
 .checkout-success-page {
-  padding-top: 10rem;
+  padding-top: 12rem;
   padding-bottom: 10rem;
   display: flex;
   justify-content: center;

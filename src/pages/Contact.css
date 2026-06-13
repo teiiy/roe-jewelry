@@ -1,5 +1,5 @@
 .contact-page {
-  padding-top: calc(var(--space-xl) * 2.5);
+  padding-top: 9.5rem;
   padding-bottom: var(--space-xxl);
   min-height: 80vh;
 }
