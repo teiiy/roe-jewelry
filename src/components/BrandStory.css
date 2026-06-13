@@ -1,16 +1,18 @@
-.brand-story {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+.brand-story.container {
+  padding-top: 4rem;
+  padding-bottom: 0.5rem;
   /* Reduced padding-bottom to align card base with the floating inset picture */
-  margin-top: 8rem;
-  margin-bottom: 11rem;
-  /* Increased margin-bottom by another 2rem (total 11rem) to separate from reviews */
+  margin-top: 5rem !important;
+  margin-bottom: 3rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  /* Adjusted margin-bottom to bring testimonials section closer */
   background-color: #ffffff;
   /* White card surface for clear threshold contrast */
   border: 1px solid rgba(197, 162, 93, 0.18);
   /* Elegant gold-toned border */
   border-radius: 8px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.02), 0 15px 30px rgba(197, 162, 93, 0.01);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08), 0 15px 30px rgba(197, 162, 93, 0.01);
   /* Soft luxury elevation shadow */
   position: relative;
 }
