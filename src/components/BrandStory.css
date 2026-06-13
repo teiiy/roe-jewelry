@@ -2,8 +2,8 @@
   padding-top: 6rem;
   padding-bottom: 2.5rem;
   /* Reduced padding-bottom to align card base with the floating inset picture */
-  margin-top: 8rem !important;
-  margin-bottom: 11rem !important;
+  margin-top: 6rem !important;
+  margin-bottom: 9rem !important;
   margin-left: auto !important;
   margin-right: auto !important;
   /* Increased margin-bottom by another 2rem (total 11rem) to separate from reviews */
@@ -191,8 +191,8 @@
   .brand-story.container {
     padding-top: 4rem;
     padding-bottom: 2rem;
-    margin-top: 5rem !important;
-    margin-bottom: 5rem !important;
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
   }
 
   .brand-story-grid {
