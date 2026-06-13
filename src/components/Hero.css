@@ -7,7 +7,7 @@
   position: relative;
   overflow: hidden;
   margin-top: 5rem; /* Space for fixed navbar */
-  margin-bottom: 1rem; /* Spacing between Hero and Section 2 */
+  margin-bottom: 2rem; /* Spacing between Hero and Section 2 */
   color: var(--color-cream);
   padding: 4rem 0;
 }
