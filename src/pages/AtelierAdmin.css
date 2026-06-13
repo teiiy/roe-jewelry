@@ -839,3 +839,110 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Metadata & Checkbox layouts */
+.checkbox-metadata-row {
+  margin-bottom: var(--space-xs);
+}
+
+.checkbox-options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  background-color: var(--color-cream);
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.checkbox-item-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checkbox-item-label input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--color-emerald);
+  cursor: pointer;
+}
+
+.checkbox-item-label span {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-slate);
+  text-transform: none !important;
+  font-weight: 500 !important;
+}
+
+/* Media selector layout */
+.media-upload-group {
+  border-top: 1px dashed rgba(0, 0, 0, 0.08);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+  padding: var(--space-sm) 0;
+}
+
+.media-selector-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 60px;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.file-upload-box, .preset-select-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.file-upload-box span, .preset-select-box span {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: #777;
+  font-weight: 600;
+}
+
+.custom-file-input {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  padding: 6px !important;
+  border: 1px dashed var(--color-gold) !important;
+  background-color: var(--color-alabaster) !important;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.image-form-preview {
+  width: 50px;
+  height: 60px;
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-gold);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.image-form-preview img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .media-selector-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .image-form-preview {
+    width: 60px;
+    height: 70px;
+    margin: 0 auto;
+  }
+}

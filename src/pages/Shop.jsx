@@ -40,7 +40,8 @@ const Shop = () => {
   // Filter products
   const filteredProducts = products.filter((product) => {
     if (activeCategory === 'all') return true;
-    return getProductCategory(product) === activeCategory;
+    const cat = product.category || getProductCategory(product);
+    return cat === activeCategory;
   });
 
   // Sort products

@@ -8,10 +8,20 @@ import './ProductDetail.css';
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart, products } = useApp();
+  const product = products.find((p) => p.id === id);
+
+  const availableFinishes = product ? (product.finishes || ['Yellow Gold', 'Rose Gold', 'White Gold']) : [];
+  const availableSizes = product ? (product.sizes || ['Small', 'Medium', 'Large']) : [];
+
   const [selectedGold, setSelectedGold] = useState('Yellow Gold');
   const [selectedSize, setSelectedSize] = useState('Medium');
 
-  const product = products.find((p) => p.id === id);
+  useEffect(() => {
+    if (product) {
+      setSelectedGold(product.finishes && product.finishes.length > 0 ? product.finishes[0] : 'Yellow Gold');
+      setSelectedSize(product.sizes && product.sizes.length > 0 ? product.sizes[0] : 'Medium');
+    }
+  }, [product]);
 
   // Scroll to top when product ID changes
   useEffect(() => {
@@ -74,7 +84,7 @@ const ProductDetail = () => {
           <div className="selector-group">
             <span className="selector-label">Material & Finish</span>
             <div className="gold-selector-options">
-              {['Yellow Gold', 'Rose Gold', 'White Gold'].map((gold) => (
+              {availableFinishes.map((gold) => (
                 <button
                   key={gold}
                   onClick={() => setSelectedGold(gold)}
@@ -89,7 +99,7 @@ const ProductDetail = () => {
           <div className="selector-group">
             <span className="selector-label">Select Size</span>
             <div className="size-selector-options">
-              {['Small', 'Medium', 'Large'].map((size) => (
+              {availableSizes.map((size) => (
                 <button
                   key={size}
                   onClick={() => setSelectedSize(size)}

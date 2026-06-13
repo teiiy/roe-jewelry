@@ -40,7 +40,11 @@ const ProductCard = ({ product }) => {
           </div>
         </div>
         <div className="product-info">
-          <span className="product-tag">{getMaterialTag(product.id)}</span>
+          <span className="product-tag">
+            {product.tags && Array.isArray(product.tags) 
+              ? product.tags.join(' / ') 
+              : getMaterialTag(product.id)}
+          </span>
           <h3 className="product-title">{product.title}</h3>
           <p className="product-price">${product.price.toFixed(2)}</p>
         </div>

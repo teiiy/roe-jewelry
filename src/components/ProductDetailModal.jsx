@@ -6,8 +6,19 @@ import './ProductDetailModal.css';
 
 const ProductDetailModal = () => {
   const { selectedProduct, setSelectedProduct, addToCart } = useApp();
+
+  const availableFinishes = selectedProduct ? (selectedProduct.finishes || ['Yellow Gold', 'Rose Gold', 'White Gold']) : [];
+  const availableSizes = selectedProduct ? (selectedProduct.sizes || ['Small', 'Medium', 'Large']) : [];
+
   const [selectedGold, setSelectedGold] = useState('Yellow Gold');
   const [selectedSize, setSelectedSize] = useState('Medium');
+
+  useEffect(() => {
+    if (selectedProduct) {
+      setSelectedGold(selectedProduct.finishes && selectedProduct.finishes.length > 0 ? selectedProduct.finishes[0] : 'Yellow Gold');
+      setSelectedSize(selectedProduct.sizes && selectedProduct.sizes.length > 0 ? selectedProduct.sizes[0] : 'Medium');
+    }
+  }, [selectedProduct]);
 
   // Lock scroll when open
   useEffect(() => {
@@ -96,7 +107,7 @@ const ProductDetailModal = () => {
               <div className="selector-group">
                 <span className="selector-label">Material & Finish</span>
                 <div className="gold-selector-options">
-                  {['Yellow Gold', 'Rose Gold', 'White Gold'].map((gold) => (
+                  {availableFinishes.map((gold) => (
                     <button
                       key={gold}
                       onClick={() => setSelectedGold(gold)}
@@ -111,7 +122,7 @@ const ProductDetailModal = () => {
               <div className="selector-group">
                 <span className="selector-label">Select Size</span>
                 <div className="size-selector-options">
-                  {['Small', 'Medium', 'Large'].map((size) => (
+                  {availableSizes.map((size) => (
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}

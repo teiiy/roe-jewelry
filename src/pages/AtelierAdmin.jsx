@@ -40,8 +40,40 @@ const AtelierAdmin = () => {
     price: '',
     description: '',
     category: 'necklaces',
-    image: '/src/assets/images/product_necklace.png'
+    image: '/src/assets/images/product_necklace.png',
+    tagsString: '',
+    sizes: ['Small', 'Medium', 'Large'],
+    finishes: ['Yellow Gold', 'Rose Gold', 'White Gold']
   });
+
+  const handleSizeChange = (size) => {
+    setProdForm(prev => {
+      const sizes = prev.sizes.includes(size)
+        ? prev.sizes.filter(s => s !== size)
+        : [...prev.sizes, size];
+      return { ...prev, sizes };
+    });
+  };
+
+  const handleFinishChange = (finish) => {
+    setProdForm(prev => {
+      const finishes = prev.finishes.includes(finish)
+        ? prev.finishes.filter(f => f !== finish)
+        : [...prev.finishes, finish];
+      return { ...prev, finishes };
+    });
+  };
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setProdForm(prev => ({ ...prev, image: reader.result }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   // Handle Login
   const handleLoginSubmit = (e) => {
@@ -80,7 +112,10 @@ const AtelierAdmin = () => {
       price: '',
       description: '',
       category: 'necklaces',
-      image: '/src/assets/images/product_necklace.png'
+      image: '/src/assets/images/product_necklace.png',
+      tagsString: '',
+      sizes: ['Small', 'Medium', 'Large'],
+      finishes: ['Yellow Gold', 'Rose Gold', 'White Gold']
     });
     setIsFormOpen(true);
   };
@@ -92,8 +127,11 @@ const AtelierAdmin = () => {
       title: product.title,
       price: String(product.price),
       description: product.description,
-      category: getProductCategory(product),
-      image: product.image
+      category: product.category || getProductCategory(product),
+      image: product.image,
+      tagsString: product.tags ? product.tags.join(', ') : '',
+      sizes: product.sizes || ['Small', 'Medium', 'Large'],
+      finishes: product.finishes || ['Yellow Gold', 'Rose Gold', 'White Gold']
     });
     setIsFormOpen(true);
   };
@@ -117,7 +155,11 @@ const AtelierAdmin = () => {
       title: prodForm.title,
       price: parseFloat(prodForm.price),
       description: prodForm.description,
-      image: prodForm.image
+      image: prodForm.image,
+      category: prodForm.category,
+      tags: prodForm.tagsString ? prodForm.tagsString.split(',').map(s => s.trim()).filter(Boolean) : [],
+      sizes: prodForm.sizes,
+      finishes: prodForm.finishes
     };
 
     if (editingId) {
@@ -492,22 +534,98 @@ const AtelierAdmin = () => {
                 </div>
 
                 <div className="form-group">
-                  <label>Select Mock Image Asset</label>
+                  <label>Collection Category</label>
                   <select 
-                    value={prodForm.image} 
-                    onChange={(e) => setProdForm({ ...prodForm, image: e.target.value })}
+                    value={prodForm.category} 
+                    onChange={(e) => setProdForm({ ...prodForm, category: e.target.value })}
                   >
-                    {imagesList.map((img) => (
-                      <option key={img.path} value={img.path}>{img.label}</option>
-                    ))}
+                    <option value="necklaces">Necklaces</option>
+                    <option value="bracelets">Bracelets</option>
+                    <option value="fine-jewelry">Fine Jewelry</option>
+                    <option value="rings">Rings</option>
                   </select>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label>Tags & Materials (comma separated)</label>
+                <input 
+                  type="text" 
+                  value={prodForm.tagsString} 
+                  onChange={(e) => setProdForm({ ...prodForm, tagsString: e.target.value })} 
+                  placeholder="e.g. 18K Yellow Gold, Brilliant-cut diamonds, Emerald accents"
+                />
+              </div>
+
+              <div className="form-row checkbox-metadata-row">
+                <div className="form-group checkbox-group">
+                  <label>Available Sizes</label>
+                  <div className="checkbox-options-grid">
+                    {['Small', 'Medium', 'Large', 'One Size'].map((size) => (
+                      <label key={size} className="checkbox-item-label">
+                        <input 
+                          type="checkbox" 
+                          checked={prodForm.sizes.includes(size)}
+                          onChange={() => handleSizeChange(size)}
+                        />
+                        <span>{size}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="form-group checkbox-group">
+                  <label>Available Finishes</label>
+                  <div className="checkbox-options-grid">
+                    {['Yellow Gold', 'Rose Gold', 'White Gold'].map((finish) => (
+                      <label key={finish} className="checkbox-item-label">
+                        <input 
+                          type="checkbox" 
+                          checked={prodForm.finishes.includes(finish)}
+                          onChange={() => handleFinishChange(finish)}
+                        />
+                        <span>{finish}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="form-group media-upload-group">
+                <label>Media / Product Image Asset</label>
+                <div className="media-selector-layout">
+                  <div className="file-upload-box">
+                    <span>Upload Custom Image</span>
+                    <input 
+                      type="file" 
+                      accept="image/*" 
+                      onChange={handleImageUpload} 
+                      className="custom-file-input"
+                    />
+                  </div>
+                  <div className="preset-select-box">
+                    <span>Or Select Preset</span>
+                    <select 
+                      value={prodForm.image} 
+                      onChange={(e) => setProdForm({ ...prodForm, image: e.target.value })}
+                    >
+                      {imagesList.map((img) => (
+                        <option key={img.path} value={img.path}>{img.label}</option>
+                      ))}
+                    </select>
+                  </div>
+                  {prodForm.image && (
+                    <div className="image-form-preview">
+                      <img src={prodForm.image} alt="Preview" />
+                    </div>
+                  )}
                 </div>
               </div>
 
               <div className="form-group">
                 <label>artisanal description</label>
                 <textarea 
-                  rows="4" 
+                  rows="3" 
                   value={prodForm.description} 
                   onChange={(e) => setProdForm({ ...prodForm, description: e.target.value })} 
                   required 
