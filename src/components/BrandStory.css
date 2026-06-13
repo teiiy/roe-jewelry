@@ -2,7 +2,7 @@
   padding-top: 6rem;
   padding-bottom: 6rem;
   margin-top: 8rem;
-  margin-bottom: 9rem; /* Increased margin-bottom by 1rem to separate it from reviews */
+  margin-bottom: 11rem; /* Increased margin-bottom by another 2rem (total 11rem) to separate from reviews */
   background-color: #ffffff; /* White card surface for clear threshold contrast */
   border: 1px solid rgba(197, 162, 93, 0.18); /* Elegant gold-toned border */
   border-radius: 8px;
