@@ -32,41 +32,41 @@
     "title": "Emerald Sovereign Ring",
     "price": 18.50,
     "description": "An opulent emerald-cut green gemstone mounted on a tarnish-free heavy gold band.",
-    "image": "/src/assets/images/product_ring.png"
+    "image": "/src/assets/images/product_emerald_ring.png"
   },
   {
     "id": "6",
     "title": "Atelier Link Chain",
     "price": 12.00,
     "description": "Bold rectangular link choker sculpted in tarnish-free 18K gold plating.",
-    "image": "/src/assets/images/product_necklace.png"
+    "image": "/src/assets/images/product_link_chain.png"
   },
   {
     "id": "7",
     "title": "Eternity Band",
     "price": 15.00,
     "description": "A seamless loop of emerald-cut white diamond simulants prong-set in 18K yellow gold.",
-    "image": "/src/assets/images/product_ring.png"
+    "image": "/src/assets/images/product_eternity_band.png"
   },
   {
     "id": "8",
     "title": "Signature Gold Cuff",
     "price": 9.50,
     "description": "Minimalist open-front wrist cuff with polished finish and subtle architectural branding.",
-    "image": "/src/assets/images/product_bangle.png"
+    "image": "/src/assets/images/product_gold_cuff.png"
   },
   {
     "id": "9",
     "title": "Petite Emerald Drop Earrings",
     "price": 11.00,
     "description": "Sophisticated dangling earrings featuring double-set emerald green gems linked by a delicate gold chain.",
-    "image": "/src/assets/images/product_studs.png"
+    "image": "/src/assets/images/product_emerald_earrings.png"
   },
   {
     "id": "10",
     "title": "Imperial Medallion Choker",
     "price": 14.00,
     "description": "Classic fine chain necklace featuring an engraved sun-crest gold coin medallion.",
-    "image": "/src/assets/images/product_necklace.png"
+    "image": "/src/assets/images/product_medallion_choker.png"
   }
 ]

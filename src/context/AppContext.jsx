@@ -17,7 +17,10 @@ export const AppProvider = ({ children }) => {
   const [products, setProducts] = useState(() => {
     const savedInventory = localStorage.getItem('roe_inventory');
     if (savedInventory) {
-      return JSON.parse(savedInventory);
+      const parsed = JSON.parse(savedInventory);
+      if (parsed.length >= defaultProducts.length) {
+        return parsed;
+      }
     }
     // Set default inventory
     localStorage.setItem('roe_inventory', JSON.stringify(defaultProducts));
