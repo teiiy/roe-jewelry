@@ -1,7 +1,9 @@
-.testimonials {
+.testimonials.container {
   padding-top: 10rem;
   padding-bottom: 10rem;
-  margin-top: 2rem; /* Added 2rem margin-top spacer */
+  margin-top: 2rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .testimonials-wrapper {

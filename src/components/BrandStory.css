@@ -1,18 +1,16 @@
-.brand-story.container {
-  padding-top: 4rem;
-  padding-bottom: 0.5rem;
+.brand-story {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   /* Reduced padding-bottom to align card base with the floating inset picture */
-  margin-top: 5rem !important;
-  margin-bottom: 7rem !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin-top: 8rem;
+  margin-bottom: 11rem;
   /* Increased margin-bottom by another 2rem (total 11rem) to separate from reviews */
   background-color: #ffffff;
   /* White card surface for clear threshold contrast */
   border: 1px solid rgba(197, 162, 93, 0.18);
   /* Elegant gold-toned border */
   border-radius: 8px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08), 0 15px 30px rgba(197, 162, 93, 0.01);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.02), 0 15px 30px rgba(197, 162, 93, 0.01);
   /* Soft luxury elevation shadow */
   position: relative;
 }
@@ -61,13 +59,14 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 60%;
+  width: 45%;
   aspect-ratio: 3/4;
   overflow: hidden;
   border: 1px solid rgba(197, 162, 93, 0.25);
   border-radius: 4px;
   background-color: var(--color-cream);
-  padding: 0.5rem;
+  padding: 0rem;
+  padding-bottom: 0rem;
   z-index: 5;
   box-shadow: var(--shadow-luxury);
 }
@@ -188,11 +187,11 @@
 
 /* Responsiveness */
 @media (max-width: 1024px) {
-  .brand-story.container {
+  .brand-story {
     padding-top: 4rem;
     padding-bottom: 2rem;
-    margin-top: 3rem !important;
-    margin-bottom: 3rem !important;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
   }
 
   .brand-story-grid {
@@ -212,11 +211,11 @@
 }
 
 @media (max-width: 600px) {
-  .brand-story.container {
+  .brand-story {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    margin-top: 3rem !important;
-    margin-bottom: 3rem !important;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     border-radius: 4px;
   }
 
