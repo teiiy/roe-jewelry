@@ -11,7 +11,7 @@ const BrandStory = () => {
     offset: ['start end', 'end start']
   });
 
-  const yOffset = useTransform(scrollYProgress, [0, 1], [-40, 40]);
+  const yOffset = useTransform(scrollYProgress, [0, 1], [-60, -10]);
 
   return (
     <section ref={containerRef} className="brand-story container" id="about">

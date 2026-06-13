@@ -1,6 +1,6 @@
 .brand-story {
   padding-top: 12rem;
-  padding-bottom: 12rem;
+  padding-bottom: 16rem; /* Expanded bottom padding to safeguard against visual overlapping */
   background-color: transparent;
 }
 
