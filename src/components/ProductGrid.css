@@ -1,23 +1,16 @@
 .product-section {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  /* Increased padding to prevent overlap */
-  padding-left: 0rem;
-  padding-right: 0rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 0rem;
-  margin-right: 0rem;
+  padding: var(--section-padding-desktop);
+  margin: 0;
 }
 
 .section-title {
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-bottom: var(--space-xl);
+  margin-top: 0;
   color: var(--color-slate);
   text-transform: uppercase;
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 2.2rem;
   text-align: center;
   letter-spacing: 0.05em;
 }
@@ -25,7 +18,7 @@
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+  gap: var(--grid-gap-desktop);
 }
 
 @media (max-width: 1024px) {

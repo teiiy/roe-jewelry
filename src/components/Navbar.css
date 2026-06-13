@@ -4,18 +4,30 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background-color: rgba(247, 244, 238, 0.95);
-  backdrop-filter: blur(10px);
+  background-color: rgba(247, 244, 238, 0.85);
+  backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(42, 42, 42, 0.05);
+  transition: background-color var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.navbar.scrolled {
+  background-color: rgba(247, 244, 238, 0.98);
+  border-bottom: 1px solid rgba(42, 42, 42, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
 }
 
 .navbar-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 4rem;
+  padding: 1.8rem 4rem;
   max-width: 1440px;
   margin: 0 auto;
+  transition: padding var(--transition-smooth);
+}
+
+.navbar.scrolled .navbar-container {
+  padding: 1rem 4rem;
 }
 
 .navbar-logo a {
@@ -64,13 +76,62 @@
   display: flex;
   gap: 1.5rem;
   color: var(--color-slate);
+  align-items: center;
 }
 
 .navbar-icons button {
   color: var(--color-slate);
   transition: color var(--transition-fast);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-icons button:hover {
   color: var(--color-gold);
+}
+
+/* Cart Button & Badge */
+.cart-btn {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--color-emerald);
+  color: var(--color-alabaster);
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border: 1px solid var(--color-alabaster);
+  animation: popBadge 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Scroll driven progress bar */
+.scroll-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--color-gold-muted) 0%, var(--color-gold) 100%);
+  transition: width 0.05s linear;
+}
+
+@keyframes popBadge {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

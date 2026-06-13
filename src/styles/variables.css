@@ -2,8 +2,12 @@
   --color-alabaster: #F7F4EE;
   --color-cream: #F1ECE2;
   --color-emerald: #004B36;
+  --color-emerald-dark: #003627;
+  --color-emerald-light: #0a5c46;
   --color-gold: #C5A25D;
   --color-gold-hover: #DDBA76;
+  --color-gold-muted: rgba(197, 162, 93, 0.4);
+  --color-gold-light: rgba(197, 162, 93, 0.1);
   --color-slate: #2A2A2A;
 
   --font-serif: 'Cormorant Garamond', serif;
@@ -12,4 +16,25 @@
   --transition-fast: 0.2s ease;
   --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-luxury: 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+
+  --shadow-luxury: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --shadow-drawer: -10px 0 30px rgba(0, 0, 0, 0.05);
+
+  /* Unified Spacing System */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 4rem;
+
+  --section-padding-desktop: 8rem 0;
+  --section-padding-mobile: 4rem 0;
+  
+  --container-padding-desktop: 4rem;
+  --container-padding-mobile: 1.5rem;
+
+  --grid-gap-desktop: 4rem;
+  --grid-gap-mobile: 2rem;
 }

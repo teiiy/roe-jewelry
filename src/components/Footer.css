@@ -1,14 +1,8 @@
 .footer {
   background-color: var(--color-slate);
   color: var(--color-alabaster);
-  padding-top: 3rem;
-  padding-bottom: 0rem;
-  padding-left: 0rem;
-  padding-right: 0rem;
-  margin-top: 0rem;
-  margin-bottom: 0rem;
-  margin-left: 0rem;
-  margin-right: 0rem;
+  padding-top: var(--space-xxl);
+  margin-top: auto; /* Push footer to bottom */
 }
 
 .footer-container {

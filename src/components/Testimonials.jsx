@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import { useApp } from '../context/AppContext';
 import './Testimonials.css';
 
 const testimonials = [
@@ -19,6 +20,17 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const { setActiveLightboxImage } = useApp();
+
+  const galleryItems = [
+    { id: 1, src: "/src/assets/images/gallery_1.png", alt: "Gallery 1" },
+    { id: 2, src: "/src/assets/images/gallery_2.png", alt: "Gallery 2" },
+    { id: 3, src: "/src/assets/images/gallery_3.png", alt: "Gallery 3" },
+    { id: 4, src: "/src/assets/images/product_bangle.png", alt: "Gallery 4" },
+    { id: 5, src: "/src/assets/images/product_ring.png", alt: "Gallery 5" },
+    { id: 6, src: "/src/assets/images/product_studs.png", alt: "Gallery 6" }
+  ];
+
   return (
     <section className="testimonials container">
       <h2 className="section-title">CUSTOMER REVIEWS & GALLERY</h2>
@@ -33,22 +45,35 @@ const Testimonials = () => {
           {testimonials.map((t) => (
             <div key={t.id} className="review-card">
               <div className="stars">
-                {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="#B5935A" color="#B5935A" />)}
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={14} fill="#B5935A" color="#B5935A" />
+                ))}
               </div>
               <p className="review-text">"{t.text}"</p>
-              <img src={t.image} alt={t.name} className="review-image" />
+              <div className="review-user-row">
+                <div className="review-user-image">
+                  <img src={t.image} alt={t.name} />
+                </div>
+                <span className="review-username">{t.name}</span>
+              </div>
             </div>
           ))}
         </div>
         
         <div className="gallery-section">
           <div className="gallery-scroll-container">
-            <div className="gallery-item"><img src="/src/assets/images/gallery_1.png" alt="Gallery 1" /></div>
-            <div className="gallery-item"><img src="/src/assets/images/gallery_2.png" alt="Gallery 2" /></div>
-            <div className="gallery-item"><img src="/src/assets/images/gallery_3.png" alt="Gallery 3" /></div>
-            <div className="gallery-item"><img src="/src/assets/images/product_bangle.png" alt="Gallery 4" /></div>
-            <div className="gallery-item"><img src="/src/assets/images/product_ring.png" alt="Gallery 5" /></div>
-            <div className="gallery-item"><img src="/src/assets/images/product_studs.png" alt="Gallery 6" /></div>
+            {galleryItems.map((item) => (
+              <div 
+                key={item.id} 
+                className="gallery-item"
+                onClick={() => setActiveLightboxImage(item.src)}
+              >
+                <img src={item.src} alt={item.alt} />
+                <div className="gallery-hover-overlay">
+                  <span className="gallery-zoom-icon">+</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </motion.div>

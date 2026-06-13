@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import './Footer.css';
 
@@ -7,13 +8,13 @@ const Footer = () => {
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-brand">
-          <h3>ROE</h3>
+          <h3><Link to="/">ROE</Link></h3>
         </div>
         
         <div className="footer-links-inline">
-          <a href="#">Shop</a>
-          <a href="#">FAQ</a>
-          <a href="#">Contact</a>
+          <Link to="/shop">Shop</Link>
+          <Link to="/shop">FAQ</Link>
+          <Link to="/shop">Contact</Link>
         </div>
         
         <div className="footer-social">
