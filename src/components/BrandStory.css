@@ -1,6 +1,6 @@
 .brand-story {
   padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-bottom: 2.5rem; /* Reduced padding-bottom to align card base with the floating inset picture */
   margin-top: 8rem;
   margin-bottom: 11rem; /* Increased margin-bottom by another 2rem (total 11rem) to separate from reviews */
   background-color: #ffffff; /* White card surface for clear threshold contrast */
@@ -183,7 +183,7 @@
 @media (max-width: 1024px) {
   .brand-story {
     padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
   }
