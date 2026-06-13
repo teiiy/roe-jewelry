@@ -4,7 +4,7 @@
 }
 
 .section-title {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
   margin-top: 0;
   color: var(--color-slate);
   text-transform: uppercase;
