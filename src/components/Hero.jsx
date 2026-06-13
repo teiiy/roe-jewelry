@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import './Hero.css';
 
@@ -56,10 +57,10 @@ const Hero = () => {
             Sculpted in tarnish-free 18K gold and adorned with brilliant emerald-cut accents. Designed to blend timeless classicism with modern structure.
           </motion.p>
           <motion.div variants={itemVariants} className="hero-actions">
-            <a href="#new-in" className="hero-cta-btn">
+            <Link to="/shop" className="hero-cta-btn">
               Explore Collection
               <span className="btn-line"></span>
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
 

@@ -130,3 +130,16 @@
   background-color: var(--color-gold);
   color: var(--color-cream);
 }
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quick-view-badge {
+  cursor: pointer;
+  outline: none;
+}

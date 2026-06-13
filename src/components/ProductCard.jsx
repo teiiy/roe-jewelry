@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import './ProductCard.css';
 
@@ -21,19 +22,29 @@ const ProductCard = ({ product }) => {
     addToCart(product);
   };
 
+  const handleQuickView = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setSelectedProduct(product);
+  };
+
   return (
-    <div className="product-card" onClick={() => setSelectedProduct(product)}>
-      <div className="product-image-container">
-        <img src={product.image} alt={product.title} className="product-image" />
-        <div className="product-hover-overlay">
-          <span className="quick-view-badge">Quick View</span>
+    <div className="product-card">
+      <Link to={`/product/${product.id}`} className="product-card-link">
+        <div className="product-image-container">
+          <img src={product.image} alt={product.title} className="product-image" />
+          <div className="product-hover-overlay">
+            <button className="quick-view-badge" onClick={handleQuickView}>
+              Quick View
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="product-info">
-        <span className="product-tag">{getMaterialTag(product.id)}</span>
-        <h3 className="product-title">{product.title}</h3>
-        <p className="product-price">${product.price.toFixed(2)}</p>
-      </div>
+        <div className="product-info">
+          <span className="product-tag">{getMaterialTag(product.id)}</span>
+          <h3 className="product-title">{product.title}</h3>
+          <p className="product-price">${product.price.toFixed(2)}</p>
+        </div>
+      </Link>
       <button className="add-to-bag-btn" onClick={handleAddClick}>
         ADD TO BAG
       </button>

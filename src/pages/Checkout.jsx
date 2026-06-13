@@ -5,7 +5,7 @@ import { ArrowLeft, CreditCard, Truck, CheckCircle, ShieldCheck } from 'lucide-r
 import './Checkout.css';
 
 const Checkout = () => {
-  const { cart, totalPrice, clearCart } = useApp();
+  const { cart, totalPrice, clearCart, addOrder } = useApp();
   const [step, setStep] = useState(1); // 1: Shipping, 2: Payment, 3: Success
 
   // Form states
@@ -78,6 +78,12 @@ const Checkout = () => {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
+        addOrder({
+          id: orderId,
+          items: cart,
+          total: totalPrice,
+          shipping: shippingForm
+        });
         setStep(3);
         clearCart(); // Clear cart state on order completion
       }, 2000);

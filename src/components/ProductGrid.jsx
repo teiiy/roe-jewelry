@@ -1,10 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useApp } from '../context/AppContext';
 import ProductCard from './ProductCard';
-import productsData from '../data/products.json';
 import './ProductGrid.css';
 
 const ProductGrid = () => {
+  const { products } = useApp();
+  const featuredProducts = products.slice(0, 4);
+
   return (
     <section className="product-section container">
       <motion.div 
@@ -15,12 +19,12 @@ const ProductGrid = () => {
       >
         <h2 className="section-title">NEW ARRIVALS</h2>
         <div className="product-grid">
-          {productsData.map(product => (
+          {featuredProducts.map(product => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
         <div className="shop-all-wrapper">
-          <a href="#shop" className="shop-all-btn">Shop All Collections</a>
+          <Link to="/shop" className="shop-all-btn">Shop All Collections</Link>
         </div>
       </motion.div>
     </section>

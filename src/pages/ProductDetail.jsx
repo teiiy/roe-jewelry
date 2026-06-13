@@ -3,16 +3,15 @@ import { useParams, Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { ShieldCheck, Heart, Truck, ArrowLeft } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
-import productsData from '../data/products.json';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { addToCart } = useApp();
+  const { addToCart, products } = useApp();
   const [selectedGold, setSelectedGold] = useState('Yellow Gold');
   const [selectedSize, setSelectedSize] = useState('Medium');
 
-  const product = productsData.find((p) => p.id === id);
+  const product = products.find((p) => p.id === id);
 
   // Scroll to top when product ID changes
   useEffect(() => {
@@ -39,7 +38,7 @@ const ProductDetail = () => {
   };
 
   // Get 3 recommendation products (excluding current)
-  const recommendations = productsData
+  const recommendations = products
     .filter((p) => p.id !== id)
     .slice(0, 3);
 

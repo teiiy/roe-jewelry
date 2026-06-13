@@ -14,6 +14,9 @@ import Shop from './pages/Shop';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import FAQ from './pages/FAQ';
+import Contact from './pages/Contact';
+import AtelierAdmin from './pages/AtelierAdmin';
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/atelier-admin" element={<AtelierAdmin />} />
         </Routes>
       </main>
       <Footer />

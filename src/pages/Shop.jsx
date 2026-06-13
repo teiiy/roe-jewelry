@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useApp } from '../context/AppContext';
 import ProductCard from '../components/ProductCard';
-import productsData from '../data/products.json';
 import './Shop.css';
 
 const Shop = () => {
+  const { products } = useApp();
   const [searchParams, setSearchParams] = useSearchParams();
   const categoryParam = searchParams.get('category') || 'all';
 
@@ -37,7 +38,7 @@ const Shop = () => {
   };
 
   // Filter products
-  const filteredProducts = productsData.filter((product) => {
+  const filteredProducts = products.filter((product) => {
     if (activeCategory === 'all') return true;
     return getProductCategory(product) === activeCategory;
   });
