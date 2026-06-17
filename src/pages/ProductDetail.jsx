@@ -7,7 +7,7 @@ import './ProductDetail.css';
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { addToCart, products } = useApp();
+  const { addToCart, products, toggleWishlist, isInWishlist } = useApp();
   const product = products.find((p) => p.id === id);
 
   const availableFinishes = product ? (product.finishes || ['Yellow Gold', 'Rose Gold', 'White Gold']) : [];
@@ -116,8 +116,16 @@ const ProductDetail = () => {
             <button onClick={handleAddToBag} className="detail-add-btn">
               Add to Shopping Bag
             </button>
-            <button className="detail-wishlist-btn" aria-label="Add to wishlist">
-              <Heart size={20} />
+            <button 
+              onClick={() => toggleWishlist(product.id)} 
+              className={`detail-wishlist-btn ${isInWishlist(product.id) ? 'active' : ''}`}
+              aria-label="Add to wishlist"
+            >
+              <Heart 
+                size={20} 
+                fill={isInWishlist(product.id) ? "#c93b3b" : "none"} 
+                color={isInWishlist(product.id) ? "#c93b3b" : "currentColor"}
+              />
             </button>
           </div>
 

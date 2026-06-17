@@ -56,6 +56,12 @@ export const AppProvider = ({ children }) => {
     return activeAdmin ? JSON.parse(activeAdmin) : null;
   });
 
+  // 6. Wishlist / Likes State
+  const [wishlist, setWishlist] = useState(() => {
+    const savedWishlist = localStorage.getItem('roe_wishlist');
+    return savedWishlist ? JSON.parse(savedWishlist) : [];
+  });
+
   // Synchronize cart with localStorage
   useEffect(() => {
     localStorage.setItem('roe_cart', JSON.stringify(cart));
@@ -75,6 +81,11 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('roe_admin_users', JSON.stringify(adminUsers));
   }, [adminUsers]);
+
+  // Synchronize wishlist with localStorage
+  useEffect(() => {
+    localStorage.setItem('roe_wishlist', JSON.stringify(wishlist));
+  }, [wishlist]);
 
   // 6. Cart Helper Functions
   const addToCart = (product) => {
@@ -163,6 +174,19 @@ export const AppProvider = ({ children }) => {
     sessionStorage.removeItem('roe_active_admin');
   };
 
+  const toggleWishlist = (productId) => {
+    setWishlist((prev) => {
+      if (prev.includes(productId)) {
+        return prev.filter((id) => id !== productId);
+      }
+      return [...prev, productId];
+    });
+  };
+
+  const isInWishlist = (productId) => {
+    return wishlist.includes(productId);
+  };
+
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
@@ -194,7 +218,10 @@ export const AppProvider = ({ children }) => {
         addOrder,
         registerAdmin,
         loginAdmin,
-        logoutAdmin
+        logoutAdmin,
+        wishlist,
+        toggleWishlist,
+        isInWishlist
       }}
     >
       {children}

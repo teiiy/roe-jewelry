@@ -5,7 +5,7 @@ import { useApp } from '../context/AppContext';
 import './ProductDetailModal.css';
 
 const ProductDetailModal = () => {
-  const { selectedProduct, setSelectedProduct, addToCart } = useApp();
+  const { selectedProduct, setSelectedProduct, addToCart, toggleWishlist, isInWishlist } = useApp();
 
   const availableFinishes = selectedProduct ? (selectedProduct.finishes || ['Yellow Gold', 'Rose Gold', 'White Gold']) : [];
   const availableSizes = selectedProduct ? (selectedProduct.sizes || ['Small', 'Medium', 'Large']) : [];
@@ -139,8 +139,17 @@ const ProductDetailModal = () => {
                 <button onClick={handleAddToBag} className="modal-add-btn">
                   Add to Shopping Bag
                 </button>
-                <button className="wishlist-btn" aria-label="Add to wishlist">
-                  <Heart size={20} strokeWidth={1.5} />
+                <button 
+                  onClick={() => toggleWishlist(selectedProduct.id)} 
+                  className={`wishlist-btn ${isInWishlist(selectedProduct.id) ? 'active' : ''}`}
+                  aria-label="Add to wishlist"
+                >
+                  <Heart 
+                    size={20} 
+                    strokeWidth={1.5} 
+                    fill={isInWishlist(selectedProduct.id) ? "#c93b3b" : "none"} 
+                    color={isInWishlist(selectedProduct.id) ? "#c93b3b" : "currentColor"}
+                  />
                 </button>
               </div>
 

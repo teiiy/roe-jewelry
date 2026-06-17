@@ -209,10 +209,11 @@
   color: var(--color-slate);
 }
 
-.wishlist-btn:hover {
+.wishlist-btn:hover,
+.wishlist-btn.active {
   border-color: #c93b3b;
   color: #c93b3b;
-  background-color: rgba(201, 59, 59, 0.02);
+  background-color: rgba(201, 59, 59, 0.04);
 }
 
 .modal-badges-grid {
