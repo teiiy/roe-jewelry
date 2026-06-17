@@ -44,14 +44,14 @@ const BrandStory = () => {
         {/* Column 2: Structured Editorial Content */}
         <div className="story-content">
           <span className="story-eyebrow">OUR PHILOSOPHY</span>
-          <h2 className="story-heading">Timeless Form &<br />Structural Balance</h2>
+          <h2 className="story-heading">Timeless Elegance &<br />Structural Balance</h2>
 
           <div className="story-paragraphs">
             <p>
-              ROE Accessories is born from a desire to blend flawless classicism and high-end craftsmanship with specialty fine jewelry. We reject mass production to focus entirely on rarity, structural balance, and the captivating play of light against precious metals.
+              ROE Accessories is born from a desire to curate the finest modern classics and high-end jewelry. We partner with elite artisans to offer premium pieces, focusing entirely on design excellence, structural balance, and the captivating play of light against precious metals.
             </p>
             <p className="secondary-p">
-              Each piece is meticulously designed in-house, focusing on the weight, drape, and light reflection of 18K tarnish-free gold plating.
+              Each collection is meticulously hand-selected, focusing on the weight, drape, and light reflection of 18K tarnish-free gold plating.
             </p>
           </div>
 
@@ -60,21 +60,21 @@ const BrandStory = () => {
             <div className="pillar-item">
               <span className="pillar-bullet">✦</span>
               <div>
-                <h4>Rarity & Intention</h4>
-                <p>Limited batch releases ensuring your heirloom remains truly unique.</p>
+                <h4>Curated Selection</h4>
+                <p>Limited boutique collections ensuring your selected piece remains truly unique.</p>
               </div>
             </div>
             <div className="pillar-item">
               <span className="pillar-bullet">✦</span>
               <div>
-                <h4>Ethical Metals</h4>
-                <p>Conflict-free gemstones set in responsibly-refined tarnish-free gold.</p>
+                <h4>Premium Sourcing</h4>
+                <p>Hand-selected conflict-free gemstones set in tarnish-free, responsibly-plated gold.</p>
               </div>
             </div>
           </div>
 
           <blockquote className="story-blockquote">
-            "Every piece is designed to be an heirloom, crafted to command a room."
+            "Every piece in our boutique is hand-selected to be an heirloom, curated to command a room."
           </blockquote>
         </div>
 

@@ -66,7 +66,7 @@ const Shop = () => {
         <span className="shop-eyebrow">FINE JEWELRY</span>
         <h1 className="shop-title">The Collections</h1>
         <p className="shop-description">
-          Explore our complete collection of signature jewelry. Sculpted in conflict-free 18K gold and tarnish-free finishes.
+          Explore our complete collection of signature jewelry, curated in tarnish-free finishes and conflict-free 18K gold plating.
         </p>
       </header>
 

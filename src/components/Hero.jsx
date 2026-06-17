@@ -51,10 +51,10 @@ const Hero = () => {
           </motion.div>
           <motion.h1 variants={itemVariants} className="hero-title">
             ROE — <br/>
-            <span className="serif-italic">Affordable Luxury</span>
+            <span className="serif-italic">Curated Luxury</span>
           </motion.h1>
           <motion.p variants={itemVariants} className="hero-description">
-            Sculpted in tarnish-free 18K gold and adorned with brilliant emerald-cut accents. Designed to blend timeless classicism with modern structure.
+            Discover our hand-selected collections of fine jewelry, plated in tarnish-free 18K gold and adorned with brilliant zirconia. Timeless elegance curated for the modern wardrobe.
           </motion.p>
           <motion.div variants={itemVariants} className="hero-actions">
             <Link to="/shop" className="hero-cta-btn">

@@ -8,7 +8,12 @@ const Footer = () => {
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-brand">
-          <h3><Link to="/">ROE</Link></h3>
+          <h3>
+            <Link to="/" className="footer-logo-link">
+              <img src="/src/assets/images/logo_stag_white.jpeg" alt="ROE Logo" className="footer-logo-image" />
+              <span className="footer-logo-text">ROE</span>
+            </Link>
+          </h3>
         </div>
         
         <div className="footer-links-inline">
@@ -25,7 +30,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} ROE Jewelry. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} ROE Accessories. All rights reserved.</p>
       </div>
     </footer>
   );
