@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, ShoppingBag } from 'lucide-react';
+import { Search, ShoppingBag, Heart } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import './Navbar.css';
 
 const Navbar = () => {
-  const { totalItems, setIsCartOpen } = useApp();
+  const { totalItems, setIsCartOpen, wishlist } = useApp();
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
@@ -65,6 +65,14 @@ const Navbar = () => {
           <button aria-label="Search">
             <Search size={20} strokeWidth={1.5} />
           </button>
+
+          <Link to="/liked" className="liked-btn" aria-label="Favorites">
+            <Heart size={20} strokeWidth={1.5} />
+            {wishlist.length > 0 && (
+              <span className="liked-badge">{wishlist.length}</span>
+            )}
+          </Link>
+
           <button aria-label="Shopping Bag" onClick={() => setIsCartOpen(true)} className="cart-btn">
             <ShoppingBag size={20} strokeWidth={1.5} />
             {totalItems > 0 && (

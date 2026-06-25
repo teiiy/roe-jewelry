@@ -18,6 +18,7 @@ const Footer = () => {
         
         <div className="footer-links-inline">
           <Link to="/shop">Shop</Link>
+          <Link to="/liked">Liked Pieces</Link>
           <Link to="/faq">FAQ</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/atelier-admin">Atelier Portal</Link>
