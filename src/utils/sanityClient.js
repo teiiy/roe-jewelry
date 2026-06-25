@@ -1,7 +1,10 @@
 import { createClient } from '@sanity/client';
 
+const projectId = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_SANITY_PROJECT_ID) 
+  || 'o5ftfo6f';
+
 export const roeCmsClient = createClient({
-  projectId: import.meta.env.VITE_SANITY_PROJECT_ID || 'o5ftfo6f',
+  projectId,
   dataset: 'production',
   useCdn: true, // CDN caches responses globally to make high-res luxury assets load instantly
   apiVersion: '2026-06-25', 
