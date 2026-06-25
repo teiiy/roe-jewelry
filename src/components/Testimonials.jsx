@@ -9,13 +9,13 @@ const testimonials = [
     id: 1, 
     name: "Eleanor V.", 
     text: "The craftsmanship is unparalleled. My bangle catches the light beautifully. Every piece is an heirloom crafted to command a room.",
-    image: "/src/assets/images/gallery_scroll_1.png"
+    image: "/images/gallery_scroll_1.png"
   },
   { 
     id: 2, 
     name: "Sophia M.", 
     text: "Absolutely stunning. Affordable luxury that truly feels premium. I am constantly asked about my jewelry whenever I wear it out.",
-    image: "/src/assets/images/gallery_scroll_2.png"
+    image: "/images/gallery_scroll_2.png"
   }
 ];
 
@@ -23,12 +23,12 @@ const Testimonials = () => {
   const { setActiveLightboxImage } = useApp();
 
   const galleryItems = [
-    { id: 1, src: "/src/assets/images/gallery_1.png", alt: "Gallery 1" },
-    { id: 2, src: "/src/assets/images/gallery_2.png", alt: "Gallery 2" },
-    { id: 3, src: "/src/assets/images/gallery_3.png", alt: "Gallery 3" },
-    { id: 4, src: "/src/assets/images/product_bangle.png", alt: "Gallery 4" },
-    { id: 5, src: "/src/assets/images/product_ring.png", alt: "Gallery 5" },
-    { id: 6, src: "/src/assets/images/product_studs.png", alt: "Gallery 6" }
+    { id: 1, src: "/images/gallery_1.png", alt: "Gallery 1" },
+    { id: 2, src: "/images/gallery_2.png", alt: "Gallery 2" },
+    { id: 3, src: "/images/gallery_3.png", alt: "Gallery 3" },
+    { id: 4, src: "/images/product_bangle.png", alt: "Gallery 4" },
+    { id: 5, src: "/images/product_ring.png", alt: "Gallery 5" },
+    { id: 6, src: "/images/product_studs.png", alt: "Gallery 6" }
   ];
 
   return (

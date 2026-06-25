@@ -5,12 +5,12 @@ import { useApp } from '../context/AppContext';
 import './Lightbox.css';
 
 const galleryImages = [
-  "/src/assets/images/gallery_1.png",
-  "/src/assets/images/gallery_2.png",
-  "/src/assets/images/gallery_3.png",
-  "/src/assets/images/product_bangle.png",
-  "/src/assets/images/product_ring.png",
-  "/src/assets/images/product_studs.png"
+  "/images/gallery_1.png",
+  "/images/gallery_2.png",
+  "/images/gallery_3.png",
+  "/images/product_bangle.png",
+  "/images/product_ring.png",
+  "/images/product_studs.png"
 ];
 
 const Lightbox = () => {

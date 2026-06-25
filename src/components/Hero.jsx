@@ -73,7 +73,7 @@ const Hero = () => {
           >
             <motion.img
               style={{ y }}
-              src="/src/assets/images/hero_banner.png"
+              src="/images/hero_banner.png"
               alt="ROE Luxury Jewelry"
               className="hero-image"
             />

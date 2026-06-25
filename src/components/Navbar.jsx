@@ -48,7 +48,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-logo">
           <Link to="/" className="navbar-logo-link">
-            <img src="/src/assets/images/logo_stag_white.jpeg" alt="ROE Logo" className="navbar-logo-image" />
+            <img src="/images/logo_stag_white.jpeg" alt="ROE Logo" className="navbar-logo-image" />
             <span className="navbar-logo-text">ROE</span>
           </Link>
         </div>

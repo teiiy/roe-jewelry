@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="footer-brand">
           <h3>
             <Link to="/" className="footer-logo-link">
-              <img src="/src/assets/images/logo_stag_white.jpeg" alt="ROE Logo" className="footer-logo-image" />
+              <img src="/images/logo_stag_white.jpeg" alt="ROE Logo" className="footer-logo-image" />
               <span className="footer-logo-text">ROE</span>
             </Link>
           </h3>

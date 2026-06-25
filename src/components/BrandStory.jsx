@@ -21,7 +21,7 @@ const BrandStory = () => {
         <div className="story-visuals">
           <div className="main-image-frame">
             <img
-              src="/src/assets/images/brand_story.png"
+              src="/images/brand_story.png"
               alt="Luxury finished jewelry close-up"
               className="main-story-image"
             />
@@ -33,7 +33,7 @@ const BrandStory = () => {
             className="floating-inset-frame"
           >
             <img
-              src="/src/assets/images/bs_mosaic_1.png"
+              src="/images/bs_mosaic_1.png"
               alt="Craftsmanship concept sketch"
               className="inset-story-image"
             />

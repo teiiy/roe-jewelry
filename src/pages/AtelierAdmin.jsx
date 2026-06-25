@@ -40,7 +40,7 @@ const AtelierAdmin = () => {
     price: '',
     description: '',
     category: 'necklaces',
-    image: '/src/assets/images/product_necklace.png',
+    image: '/images/product_necklace.png',
     tagsString: '',
     sizes: ['Small', 'Medium', 'Large'],
     finishes: ['Yellow Gold', 'Rose Gold', 'White Gold']
@@ -112,7 +112,7 @@ const AtelierAdmin = () => {
       price: '',
       description: '',
       category: 'necklaces',
-      image: '/src/assets/images/product_necklace.png',
+      image: '/images/product_necklace.png',
       tagsString: '',
       sizes: ['Small', 'Medium', 'Large'],
       finishes: ['Yellow Gold', 'Rose Gold', 'White Gold']
@@ -186,10 +186,10 @@ const AtelierAdmin = () => {
   };
 
   const imagesList = [
-    { label: 'Necklace Accent', path: '/src/assets/images/product_necklace.png' },
-    { label: 'Emerald Studs', path: '/src/assets/images/product_studs.png' },
-    { label: 'Classic Ring', path: '/src/assets/images/product_ring.png' },
-    { label: 'Gold Bangle', path: '/src/assets/images/product_bangle.png' }
+    { label: 'Necklace Accent', path: '/images/product_necklace.png' },
+    { label: 'Emerald Studs', path: '/images/product_studs.png' },
+    { label: 'Classic Ring', path: '/images/product_ring.png' },
+    { label: 'Gold Bangle', path: '/images/product_bangle.png' }
   ];
 
   // If not logged in, render the login card
