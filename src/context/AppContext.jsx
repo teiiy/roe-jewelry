@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import defaultProducts from '../data/products.json';
+import { getLiveStorefrontInventory } from '../utils/sanityClient';
 
 const AppContext = createContext();
 
@@ -86,6 +87,21 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('roe_wishlist', JSON.stringify(wishlist));
   }, [wishlist]);
+
+  // Fetch live inventory from Sanity CMS on mount
+  useEffect(() => {
+    const fetchCmsInventory = async () => {
+      try {
+        const liveProducts = await getLiveStorefrontInventory();
+        if (liveProducts && liveProducts.length > 0) {
+          setProducts(liveProducts);
+        }
+      } catch (error) {
+        console.error("Failed to load inventory from Sanity CMS, using fallback:", error);
+      }
+    };
+    fetchCmsInventory();
+  }, []);
 
   // 6. Cart Helper Functions
   const addToCart = (product) => {
